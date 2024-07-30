@@ -1,34 +1,34 @@
 package basictask1
 
-type hitung2d interface {
-	luas() float64
-	keliling() float64
+type Hitung2d interface {
+	Luas() float64
+	Keliling() float64
 }
 
-type hitung3d interface {
-	volume() float64
+type Hitung3d interface {
+	Volume() float64
 }
 
-type hitung interface {
-	hitung2d
-	hitung3d
+type Hitung interface {
+	Hitung2d
+	Hitung3d
 }
 
-type kubus struct {
-	sisi int
+type Kubus struct {
+	Sisi float64
 }
 
-func (bangun kubus) luas() int {
-	totalLuas := bangun.sisi * bangun.sisi
+func (bangun Kubus) Luas() float64 {
+	totalLuas := bangun.Sisi * bangun.Sisi
 	return totalLuas
 }
 
-func (bangun kubus) keliling() int {
-	totalKeliling := bangun.sisi * 4
+func (bangun Kubus) Keliling() float64 {
+	totalKeliling := bangun.Sisi * 4
 	return totalKeliling
 }
 
-func (bangun kubus) volume() int {
-	totalVolume := bangun.sisi * bangun.sisi * bangun.sisi
+func (bangun Kubus) Volume() float64 {
+	totalVolume := bangun.Sisi * bangun.Sisi * bangun.Sisi
 	return totalVolume
 }
