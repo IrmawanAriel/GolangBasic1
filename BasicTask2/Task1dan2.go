@@ -7,6 +7,17 @@ import (
 
 var Wg sync.WaitGroup
 
+func Sum(d []int, ch chan int) {
+	defer Wg.Done()
+	total := 0
+	for _, v := range d {
+		total += v
+	}
+	ch <- total
+	close(ch)
+
+}
+
 func Fibonacci(ch chan<- int) {
 	defer Wg.Done()
 

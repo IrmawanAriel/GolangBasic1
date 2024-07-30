@@ -3,6 +3,7 @@ package main
 import (
 	// basictask1 "IrmawanAriel/GolangBasic/BasicTask1"
 
+	basictask2 "IrmawanAriel/GolangBasic/BasicTask2"
 	"sync"
 	// "fmt"
 )
@@ -38,7 +39,7 @@ func main() {
 	// go basictask1.Tampilkan(x, y)
 	// wg.Wait()
 
-	// // nomor 1
+	// nomor 1 task 2
 	// a := []int{7, 10, 2, 34, 33, -12, -8, 4}
 	// chn := make(chan int)
 	// // go basictask2.Sum(a[:len(a)/2], chn)
@@ -46,10 +47,13 @@ func main() {
 	// total := <-chn
 	// fmt.Println("Total:", total)
 
-	// //nomor2
-	// ch := make(chan int, 10)
-	// basictask2.Wg.Add(2)
-	// go basictask2.Fibonacci(ch)
-	// go basictask2.GanjilGenap(ch)
-	// basictask2.Wg.Wait()
+	//nomor2 task 2
+	ch := make(chan int, 10)
+	basictask2.Wg.Add(2)
+	go basictask2.Fibonacci(ch)
+	go basictask2.GanjilGenap(ch)
+	basictask2.Wg.Wait()
+
+	//nomor 3 task 2
+
 }
