@@ -19,12 +19,12 @@ type Kubus struct {
 }
 
 func (bangun Kubus) Luas() float64 {
-	totalLuas := bangun.Sisi * bangun.Sisi
+	totalLuas := (bangun.Sisi * bangun.Sisi) * 6
 	return totalLuas
 }
 
 func (bangun Kubus) Keliling() float64 {
-	totalKeliling := bangun.Sisi * 4
+	totalKeliling := bangun.Sisi * 12
 	return totalKeliling
 }
 

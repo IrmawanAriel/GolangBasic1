@@ -7,14 +7,16 @@ import (
 
 var Wg sync.WaitGroup
 
-func Sum(d []int, ch chan int) {
-	defer Wg.Done()
+func Sum(d []int, chn chan int) {
+	defer func() {
+		Wg.Done()
+	}()
 	total := 0
 	for _, v := range d {
 		total += v
 	}
-	ch <- total
-	close(ch)
+	// chn <- total
+	fmt.Print("Ini hasil CH : ", total, chn)
 
 }
 
